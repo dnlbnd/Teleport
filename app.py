@@ -81,11 +81,12 @@ def teleportClipboardUpdate(input_id):
 
         outfile.close()
         json_file.close()
+
+        return Response(status = 200)
     
     except:
-        pass
-
-    return data
+        return 'The update request was unsuccessful.'
+    
 
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0',port=int(os.environ.get('PORT', 8088)))
