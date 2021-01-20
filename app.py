@@ -50,6 +50,8 @@ def teleportSend(input_url):
     else:
         return 'Unauthorised Access.'
 
+    
+
 @app.route('/teleport/clipboard')
 def teleportClipboard():
 
@@ -69,9 +71,10 @@ def teleportClipboardUpdate(input_id):
         #Open telport clipboard file
         with open('teleport.json') as json_file:
             data = json.load(json_file)
-
-        data["teleport-clipboard"][input_id]["status"] -= 1
-        print(data["teleport-clipboard"][input_id]["status"])
+ 
+        data["teleport-clipboard"][input_id]["status"] = 0
+        
+        print(data)
 
         with open('teleport.json', 'w+') as outfile:
             json.dump(data, outfile)
@@ -86,3 +89,4 @@ def teleportClipboardUpdate(input_id):
 
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0',port=int(os.environ.get('PORT', 8088)))
+    #app.run(debug=True)
