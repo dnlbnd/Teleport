@@ -44,7 +44,7 @@ def teleportSend(input_url):
     outfile.close()
 
     if request.headers.get('Teleport-Sequence') == 'b70cb0151b08596a6349e3887fb4a2e465b1d4730fa9e5874061d2c04ba92514':
-        return Response("{'a':'b'}", status=201, mimetype='application/json')
+        return Response(status=200)
     else:
         return 'Unauthorised Access.'
 
