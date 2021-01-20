@@ -71,6 +71,7 @@ def teleportClipboardUpdate(input_id):
             data = json.load(json_file)
 
         data["teleport-clipboard"][input_id]["status"] -= 1
+        print(data["teleport-clipboard"][input_id]["status"])
 
         with open('teleport.json', 'w+') as outfile:
             json.dump(data, outfile)
