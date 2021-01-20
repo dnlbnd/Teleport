@@ -35,7 +35,7 @@ def teleportSend(input_url):
         for x in data["teleport-clipboard"]:
             x["id"] -= 1        
 
-    json_file.close()
+    #json_file.close()
 
     with open('teleport.json', 'w+') as outfile:
         json.dump(data, outfile)
