@@ -80,5 +80,7 @@ def teleportClipboardUpdate(input_id):
     except:
         return "Update Failed"
 
+    return data
+
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0',port=int(os.environ.get('PORT', 8088)))
