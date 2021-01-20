@@ -4,9 +4,12 @@ import json
 
 
 app = Flask(__name__)
+@app.route('/')
+def default():
+    return "Working..."
 
 @app.route('/teleport/send/url=<path:input_url>')
-def testurl(input_url):
+def teleportSend(input_url):
     
     try:
         #Open telport clipboard file
