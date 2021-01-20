@@ -1,5 +1,6 @@
 from flask import Flask, redirect
 from flask import request
+from flask import Response
 import json
 
 
@@ -43,7 +44,7 @@ def teleportSend(input_url):
     outfile.close()
 
     if request.headers.get('Teleport-Sequence') == 'b70cb0151b08596a6349e3887fb4a2e465b1d4730fa9e5874061d2c04ba92514':
-        return data
+        return Response("{'a':'b'}", status=201, mimetype='application/json')
     else:
         return 'Unauthorised Access.'
 
