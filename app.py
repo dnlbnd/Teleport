@@ -59,10 +59,12 @@ def teleportClipboard():
         #Open telport clipboard file
         with open('teleport.json') as json_file:
             data = json.load(json_file)
+        
+        return data
     except:
-        pass
+        return 'Teleport seems to be empty.'
 
-    return data
+    
 
 @app.route('/teleport/clipboard/update/id=<int:input_id>')
 def teleportClipboardUpdate(input_id):
