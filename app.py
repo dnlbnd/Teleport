@@ -61,26 +61,7 @@ def teleportClipboard():
 
     return data
 
-@app.route('/teleport/clipboard/update/id=<int:input_id>')
-def teleportClipboardUpdate(input_id):
 
-    try:
-        #Open telport clipboard file
-        with open('teleport.json') as json_file:
-            data = json.load(json_file)
-
-        data["teleport-clipboard"][input_id]["status"] -= 1
-
-        with open('teleport.json', 'w+') as outfile:
-        json.dump(data, outfile)
-
-        outfile.close()
-        json_file.close()
-    
-    except:
-        return "Update Failed"
-
-    return data
 
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0',port=int(os.environ.get('PORT', 8088)))
