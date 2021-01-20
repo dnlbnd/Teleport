@@ -25,7 +25,8 @@ def teleportSend(input_url):
 
     data["teleport-clipboard"].append({
     'id': index,
-    't-content': input_url
+    't-content': input_url,
+    'status': 1
     })   
 
     if index < 5:
