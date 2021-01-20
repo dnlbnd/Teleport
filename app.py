@@ -62,7 +62,7 @@ def teleportClipboard():
         
         return data
     except:
-        return 'Teleport seems to be empty.'
+        return 'Teleport is empty.'
 
     
 
