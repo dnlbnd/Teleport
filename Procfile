@@ -1,1 +1,1 @@
-web: gunicorn app:teleport
+web: gunicorn app:teleport.py
