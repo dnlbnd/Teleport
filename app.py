@@ -10,7 +10,7 @@ app = Flask(__name__)
 def default():
     return "Working..."
 
-@app.route('/teleport/send/url=<input_url>')
+@app.route('/teleport/send/url=<path:input_url>')
 def teleportSend(input_url):
     
     try:
